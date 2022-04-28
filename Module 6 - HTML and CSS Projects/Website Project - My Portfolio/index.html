@@ -5,61 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Westley Spooner | Software Development</title>
-    <link rel="stylesheet" type="text/css" href=".//CSS/stylesheet.css">
+    <link rel="shortcut icon" type="img/jpg" href="./Images/coding_icon.png">
+    <link rel="stylesheet" type="text/css" href=".//CSS/stylesheet2.css">
 </head>
 
 <body class="Background">
 
+   
     <!--NAVBAR-->
     <div class="Navbar">
         <a class="active" href="#Home">Home</a>
         <a href="#About">About</a>
         <a href="#GitHub">GitHub</a>
         <a href="#Contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
 
-    <br>
-    <br>
 
-    <!--BACKGROUND VIDEO-->
-    <div id="Home">
-    <video autoplay muted loop id="Meeting_video">
-        <source src=".//Images/Videos/meeting_video.mp4" type="video/mp4">
+   
+   <!-- BACKGROUND VIDEO -->
+   <div id="Home">
+    <video autoplay muted loop id="Typing_Video">
+        <source src="./Images/Videos/Meeting_video (2).mp4" type="video/mp4">
+        <!-- Display message if video fails to run -->
+        Your browser does not support HTML5 video.
     </video>
+</div>
+ 
 
-    <div class="video_text">
-        <h1 class="White-text">Westley Spooner | Software Developer</h1>
-        
-        <strong>
-            <p class="video_text center">
-                <br>
-                <br>
-                <br>
-                <br>
+  <!-- VIDEO TEXT -->
+<div class="Video_Text">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Westley Spooner | Software Developer</h1>
+    <strong>
+        <p class="center">
                 <br>
                 <q>The most important single aspect of software developement
                 <br>is to be clear about what you are trying to build.                 
                 </q>
                 <br>
                 <br>-Bjarne Stroustrup.
-                <br>
-                <br>
                 <br>My name is Westley Spooner. Here you will learn about me and my software development journey so far.
                 <br>
                 <br>Thanks for stopping by!
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                </p>
         </strong>
     </div>
-</body>
+
+<!--SLIDESHOW SECTION ADDED-->
+
+<div id="Slideshow">
+    <div id="Slideshow_Background">
+        <div id="Slideshow_Container">
+            <!--SLIDE 1 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/westley_spooner.jpg" alt="Westley Spooner">
+                <div class="text">i'm avalible to assist you on your next project</div>
+            </div>
+
+            <!--SLIDE 2 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS Logo">
+                <div class="text">Im a fully stacked software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+            </div>
+
+            <!--SLIDE 3 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/Python.png" alt="Python Logo">
+                <div class="text">the popular programming language Python</div>
+            </div>
+
+            <!--SLIDE 4 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/C_Sharp_and_Dot_NET.png" alt="C# Logo">
+                <div class="white-text">c#, .NET Framework, ASP.NET, MVC,</div>
+            </div>
+
+            <!--SLIDE 5 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/SQL_and_Database.jpg" alt="SQL Logo">
+                <div class="text">back end development, database and SQL.</div>
+            </div>
+
+            <!--SLIDE 6 of 6-->
+            <div class="mySlides fade">
+                <img class="Slideshow_Images" src="./Images/contact-me.jpg">
+                <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now</a> </div>
+            </div>
+
+            <!--PREVIOUS AND NEXT BUTTONS-->
+
+            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="Next" onclick="plusSlides(+1)">&#10095;</a>
+        </div>
+        <br> <!--ADD SPACE BETWEEN THE SLIDESHOW IMAGES AND DOTS-->
+
+        <!--SLIDESHOW DOTS-->
+        <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+</div>
+
 
 <!--ABOUT SECTION-->
 <div class="Row" id="About">
@@ -98,23 +153,22 @@
 </div>
 
 <!--CONTACT SECTION-->
-<div class="Row" id="Contact">
-    <!--CONTACT IMAGE, LEFT COLUMN-->
-    <div class="Column_2 Column_tall">
-        <img src="./Images/contact_us.jpeg" alt="Contact_Image">
-    </div>
-    <!--CONTACT US, RIGHT COLUMN-->
-    <div class="Column_1 Column_tall">
-        <h1>Contact Us!</h1>
-        <form action="https://formspree.io/f/mqknajjn" method="post">
-            <label>Name:</label>
-                <input type="text" placeholder="Please enter your name here">
-            <label>Email:</label>
-                <input type="text" id="Email" name="Email" placeholder="Please eneter your email here">
-            <label>Message:</label>
-                <input  type="text" id="Message" placeholder="Please write your message here">
-                <input type="submit" value="SUBMIT">
-        
+<div id="Contact">
+    <button onclick="openForm()" class="Pop_Up_Button">CONTACT ME!</button>
+    <div class="form-popup" id="myForm">
+        <form action="https://formspree.io/f/mqknajjn" method="POST" class="form-container">
+           <h1>CONTACT</h1>
+           <label for="name"><b>Name</b></label>
+           <input type="text" placeholder="Type your name here" name="name" required>
+           <label for="phone"><b>Phone</b></label>
+           <input type="text" placeholder="Type your Phone Number here" name="phone" required>
+           <label for="email"><b>Email</b></label>
+           <input type="text" placeholder="Type your Email Address here" name="email" required>
+           <label for="message"><b>Message</b></label>
+           <input type="text" placeholder="Type your message here" name="name" required>
+
+           <button type="sumbmit" class="btn">SUBMIT</button>
+           <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
         </form>
     </div>
 </div>
@@ -125,5 +179,6 @@
                 <p class="center"> &copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
             </p>
         </footer>
+        <script src="./Javascript/Portfolio.js"></script>
 </body>
 </html>
